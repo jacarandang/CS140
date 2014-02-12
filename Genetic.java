@@ -9,13 +9,14 @@ public class Genetic{
 		for(int i = 0 ; i < 100; i++){
 			gen.offer(new Unit());
 		}
-		
 		double lavg = 0;
 		double avg = 0;
 		for(int i = 0 ; i < 25; i++){
 			for(int j = 0 ; j < gen.size(); j++){
 				Unit u = gen.poll();
+				System.out.println("Done");
 				u.s = Main.program(u, false);
+				System.out.println("..");
 				gen.offer(u);
 				avg += u.s.fitness();
 			}

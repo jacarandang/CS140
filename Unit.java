@@ -25,7 +25,7 @@ public class Unit implements Comparable<Unit>{
 		prm = (Math.random()*10) - 5;
 		wtm = (Math.random()*10) - 5;
 		tkm = (Math.random()*10) - 5;
-		ped = (Math.random()*10) - 5; 
+		ped = (Math.random()*5) + 1; 
 	}
 	
 	public Unit crossover(Unit other){

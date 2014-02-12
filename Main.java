@@ -5,7 +5,7 @@ public class Main{
 	
 	public static void main(String []args)throws Exception{
 		//program(null, true);
-		program(new Unit(-2.5423498366,0.7883699568,-0.0425933942,-1.2460404564,-3.9058685017), true);
+		program(new Unit(), true);
 	}
 	
 	public static Stat program(Unit u, boolean out)throws Exception{
