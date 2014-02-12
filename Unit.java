@@ -61,7 +61,7 @@ public class Unit implements Comparable<Unit>{
 	}
 	
 	public int compareTo(Unit u){
-		return (int)(s.fitness()*100 - u.s.fitness()*100);
+		return (int)(u.s.fitness()*100 - s.fitness()*100);
 	}
 	
 }

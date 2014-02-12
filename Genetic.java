@@ -12,7 +12,7 @@ public class Genetic{
 		
 		double lavg = 0;
 		double avg = 0;
-		for(int i = 0 ; i < 1; i++){
+		for(int i = 0 ; i < 10; i++){
 			for(int j = 0 ; j < gen.size(); j++){
 				Unit u = gen.poll();
 				u.s = Main.program(u, false);
@@ -28,21 +28,35 @@ public class Genetic{
 				pop.offer(gen.poll());
 			}
 			Collections.sort(pop);
+			double tot = sum(pop);
+			for(int j = 0 ; j < 100; j++){
+				Unit pn = next(pop, tot).crossover(next(pop, tot));
+				pn.mutate();
+				gen.offer(pn);
+			}
 		}
 		Collections.sort(pop);
 		Unit un = null;
 		while(!pop.isEmpty()) System.out.println((un=pop.poll()).toString());
-		Main.program(un, true);
+		
 	}
 	
-	public static void normalize(LinkedList<Unit> u){
-		double total = 0;
-		for(int i = 0 ; i < u.size(); i++){
-			total += u.get(i).s.fitness();
+	public static double sum(LinkedList<Unit> u){
+		double sum = 0;
+		for(int i = 0 ; i < u.size(); i++) sum += u.get(i).s.fitness();
+		return sum;
+	}
+	
+	public static Unit next(LinkedList<Unit> u, double max){
+		Random r = new Random();
+		double d = r.nextDouble()*max;
+		int csum = 0;
+		for(int i = 0 ;  i < u.size(); i++){
+			csum += u.get(i).s.fitness();
+			if(csum > d){
+				return u.get(i);
+			}
 		}
-		for(int i = 0 ; i < u.size(); i++){
-			Unit un = u.get(i);
-			un.norm = un.s.fitness()/total;
-		}
+		return u.get(u.size() - 1);
 	}
 }
