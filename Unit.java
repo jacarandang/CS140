@@ -45,8 +45,14 @@ public class Unit implements Comparable<Unit>{
 	}
 	
 	public void mutate(){
-		if(Math.random() <= 0.005){
-			
+		Random r = new Random();
+		if(r.nextFloat() <= 0.005){
+			int idx = r.nextInt(5);
+			if(idx == 0) trm += (r.nextFloat()*2)-1;
+			else if(idx == 1) prm += (r.nextFloat()*2)-1;
+			else if(idx == 2) wtm += (r.nextFloat()*2)-1;
+			else if(idx == 3) tkm += (r.nextFloat()*2)-1;
+			else if(idx == 4) ped += (r.nextFloat()*2)-1;
 		}
 	}
 	

@@ -84,6 +84,7 @@ public class Scheduler{
 						remarks.add(stove.t.owner.name + " was pre-empted");
 						stove.clean();
 						stove.next = r.nextTask();
+						rlist.remove(r);
 						flag = false;
 					}
 					if(aging)r.priority++;

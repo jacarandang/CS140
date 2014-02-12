@@ -27,12 +27,12 @@ public class Genetic{
 			while(!gen.isEmpty()){
 				pop.offer(gen.poll());
 			}
-			normalize(pop);
-			
 			Collections.sort(pop);
 		}
 		Collections.sort(pop);
-		while(!pop.isEmpty()) System.out.println(pop.poll().toString());
+		Unit un = null;
+		while(!pop.isEmpty()) System.out.println((un=pop.poll()).toString());
+		Main.program(un, true);
 	}
 	
 	public static void normalize(LinkedList<Unit> u){

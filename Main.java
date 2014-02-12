@@ -4,7 +4,7 @@ import java.util.*;
 public class Main{
 	
 	public static void main(String []args)throws Exception{
-		program(new Unit(-1.5099009021, 4.0653042855, 0.1807736872,2.7973578779,-3.1972732469) , true);
+		program(null, true);
 	}
 	
 	public static Stat program(Unit u, boolean out)throws Exception{
@@ -24,7 +24,7 @@ public class Main{
 		
 		Scheduler sched;
 		if(u!=null) sched = new Scheduler(u);
-		else sched = new Scheduler(false, false, false, false, 0);
+		else sched = new Scheduler(false, true, false, false, 5);
 		
 		if(out) System.out.println("Time, Stove, Ready, Assistant, Remarks");
 		int idx = 0;
@@ -52,7 +52,7 @@ public class Main{
 			System.out.printf(",,Stove Utilization, %d/%d = %.2f%%\n", sched.stove.stoveUtil, timer, (float)sched.stove.stoveUtil/(float)(timer)*100);
 		}
 		
-		int sum = 0;
+		int sum = 0, sum1 = 0, sum2 = 0;
 		int dishes = sched.dlist.size();
 		int totalweight = 0;
 		if(out) System.out.println(",,Job, Waiting time, Priority");
@@ -60,9 +60,11 @@ public class Main{
 			Recipe temp = sched.dlist.get(i);
 			if(out) System.out.printf(",,[%s], %d, %d\n", temp.name, temp.wait, temp.priority);
 			sum += temp.wait * temp.priority;
+			sum1 += temp.wait;
+			sum2 += temp.priority;
 			totalweight += temp.priority;
 		}
-		if(out) System.out.printf(",,Weighted average wait time, %.2f\n", (double)sum/(double)(totalweight * dishes));
+		if(out) System.out.printf(",,Total:, %d,Avg. Waiting Time %.2f, Weighted average wait time, %.2f\n", sum1, (double)sum1/(double)sched.dlist.size(), (double)sum/(double)(totalweight * dishes));
 		
 		double avg = 0;
 		for(int i = 1; i < sched.dlist.size(); i++){
@@ -70,7 +72,7 @@ public class Main{
 		}
 		avg/=(double)sched.dlist.size()-1;
 		if(out) System.out.printf(",,Weighted average priority difference, %.2f\n", avg);
-		Stat stat = new Stat(timer, (float)sched.stove.stoveUtil/(float)(timer), (double)sum/(double)(totalweight * dishes), avg);
+		Stat stat = new Stat(timer, (float)sched.stove.stoveUtil/(float)(timer), (double)sum1/(double)sched.dlist.size(), avg);
 		return stat;
 	}
 	
