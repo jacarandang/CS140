@@ -12,44 +12,37 @@ public class Genetic{
 		
 		double lavg = 0;
 		double avg = 0;
-		for(int i = 0 ; i < 10; i++){
+		for(int i = 0 ; i < 1; i++){
 			for(int j = 0 ; j < gen.size(); j++){
 				Unit u = gen.poll();
 				u.s = Main.program(u, false);
 				gen.offer(u);
 				avg += u.s.fitness();
 			}
-			Collections.sort(gen);
 			avg/=(double)gen.size();
 			if(lavg > avg) System.out.println("Warning: generation "+i+" has lower average fitness");
 			lavg = avg;
-			System.out.println(avg);
+			System.out.println("Generation "+i+" average fitness: "+avg);
+			avg = 0;
 			while(!gen.isEmpty()){
 				pop.offer(gen.poll());
 			}
+			normalize(pop);
 			
-			for(int j = 0; j < 100; j++){
-				double a = Math.random();
-				Unit au, bu;
-				au = new Unit();
-				bu = new Unit();
-				for(int k = 0; k < pop.size(); k++){
-					if(pop.get(k).s.fitness() > a){
-						au = pop.get(k); 
-					}
-				}
-				a = Math.random();
-				for(int k = 0; k < pop.size(); k++){
-					if(pop.get(k).s.fitness() > a){
-						bu = pop.get(k); 
-					}
-				}
-				gen.offer(au.crossover(bu));
-			}
+			Collections.sort(pop);
 		}
 		Collections.sort(pop);
-		for(int i = 0 ; i < pop.size(); i++){
-			System.out.println(pop.get(i).toString());
+		while(!pop.isEmpty()) System.out.println(pop.poll().toString());
+	}
+	
+	public static void normalize(LinkedList<Unit> u){
+		double total = 0;
+		for(int i = 0 ; i < u.size(); i++){
+			total += u.get(i).s.fitness();
+		}
+		for(int i = 0 ; i < u.size(); i++){
+			Unit un = u.get(i);
+			un.norm = un.s.fitness()/total;
 		}
 	}
 }

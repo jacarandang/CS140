@@ -161,8 +161,8 @@ public class Scheduler{
 		if(rlist.size()>0)
 			for(int i = 0; i < rlist.size(); i++){
 				Recipe temp = rlist.get(i);
-				if(temp.nextTask().step == 0)s += " " + temp.name+ "(cook=" + temp.nextTask().trem+" pts="+temp.points+")";
-				else s += " " + temp.name+ "(prep=" + temp.nextTask().trem+" pts="+temp.points+")";
+				if(temp.nextTask().step == 0)s += " " + temp.name+ "(cook=" + temp.nextTask().trem+")";
+				else s += " " + temp.name+ "(prep=" + temp.nextTask().trem+")";
 			}		
 		else
 			s += "none";
