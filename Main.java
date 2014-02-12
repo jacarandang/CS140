@@ -25,7 +25,7 @@ public class Main{
 		
 		Scheduler sched;
 		if(u!=null) sched = new Scheduler(u);
-		else sched = new Scheduler(true, true, false, false, 5);
+		else sched = new Scheduler(false, false, false, false, 5);
 		
 		if(out) System.out.println("Time, Stove, Ready, Assistant, Remarks");
 		int idx = 0;
