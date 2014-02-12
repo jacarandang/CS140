@@ -1,0 +1,346 @@
+Time, Stove, Ready, Assistant, Remarks
+1 ,Empty,none, a(prep=10),a arrives|
+2 ,Empty,none, a(prep=9),none
+3 ,Empty,none, a(prep=8),none
+4 ,Empty,none, a(prep=7),none
+5 ,Empty,none, a(prep=6),none
+6 ,Empty,none, a(prep=5) b(prep=1),b arrives|
+7 ,b(cook=20),none, a(prep=4) c(prep=20),b is prepared|c arrives|
+8 ,b(cook=19),none, a(prep=3) c(prep=19),none
+9 ,b(cook=18),none, a(prep=2) c(prep=18),none
+10 ,b(cook=17),none, a(prep=1) c(prep=17),none
+11 ,b(cook=16), a(cook=20), c(prep=17) d(prep=1),a is prepared|d arrives|
+12 ,b(cook=15), d(cook=1) a(cook=20), c(prep=16),d is prepared|
+13 ,b(cook=14), d(cook=1) a(cook=20), c(prep=15),none
+14 ,b(cook=13), d(cook=1) a(cook=20), c(prep=14),none
+15 ,b(cook=12), d(cook=1) a(cook=20), c(prep=13),none
+16 ,b(cook=11), d(cook=1) a(cook=20), c(prep=12),none
+17 ,b(cook=10), d(cook=1) a(cook=20), c(prep=11),none
+18 ,b(cook=9), d(cook=1) a(cook=20), c(prep=10),none
+19 ,b(cook=8), d(cook=1) a(cook=20), c(prep=9),none
+20 ,b(cook=7), d(cook=1) a(cook=20), c(prep=8) e(prep=2),e arrives|
+21 ,b(cook=6), d(cook=1) a(cook=20), c(prep=7) e(prep=1) f(prep=9),f arrives|
+22 ,b(cook=5), d(cook=1) e(cook=2) a(cook=20), c(prep=6) f(prep=9) g(prep=2),e is prepared|g arrives|
+23 ,b(cook=4), d(cook=1) e(cook=2) a(cook=20), c(prep=5) f(prep=8) g(prep=1),none
+24 ,b(cook=3), g(cook=1) d(cook=1) e(cook=2) a(cook=20), c(prep=4) f(prep=7) h(prep=1),g is prepared|h arrives|
+25 ,b(cook=2), g(cook=1) h(cook=1) d(cook=1) e(cook=2) a(cook=20), c(prep=3) f(prep=6) i(prep=10),h is prepared|i arrives|
+26 ,b(cook=1), g(cook=1) h(cook=1) d(cook=1) e(cook=2) a(cook=20), c(prep=2) f(prep=5) i(prep=9),none
+27 ,Cleaning, g(cook=1) h(cook=1) d(cook=1) e(cook=2) a(cook=20), c(prep=1) f(prep=4) i(prep=8) b(prep=1),b is done cooking|stove is cleaning|
+28 ,g(cook=1), h(cook=1) c(cook=1) d(cook=1) e(cook=2) a(cook=20) b(cook=20), f(prep=4) i(prep=7),c is prepared|b is prepared|
+29 ,Cleaning, h(cook=1) c(cook=1) d(cook=1) e(cook=2) a(cook=20) b(cook=20), f(prep=3) i(prep=6) g(prep=3),g is done cooking|stove is cleaning|
+30 ,h(cook=1), c(cook=1) d(cook=1) e(cook=2) a(cook=20) b(cook=20), f(prep=2) i(prep=5) g(prep=2),none
+31 ,Cleaning, c(cook=1) d(cook=1) e(cook=2) a(cook=20) b(cook=20), f(prep=1) i(prep=4) g(prep=1),h is done|stove is cleaning|
+32 ,c(cook=1), g(cook=7) d(cook=1) e(cook=2) f(cook=8) a(cook=20) b(cook=20), i(prep=4),f is prepared|g is prepared|
+33 ,Cleaning, g(cook=7) d(cook=1) e(cook=2) f(cook=8) a(cook=20) b(cook=20), i(prep=3) c(prep=20),c is done cooking|stove is cleaning|
+34 ,g(cook=7), d(cook=1) e(cook=2) f(cook=8) a(cook=20) b(cook=20), i(prep=2) c(prep=19),none
+35 ,g(cook=6), d(cook=1) e(cook=2) f(cook=8) a(cook=20) b(cook=20), i(prep=1) c(prep=18),none
+36 ,g(cook=5), d(cook=1) e(cook=2) f(cook=8) i(cook=10) a(cook=20) b(cook=20), c(prep=18),i is prepared|
+37 ,g(cook=4), d(cook=1) e(cook=2) f(cook=8) i(cook=10) a(cook=20) b(cook=20), c(prep=17),none
+38 ,g(cook=3), d(cook=1) e(cook=2) f(cook=8) i(cook=10) a(cook=20) b(cook=20), c(prep=16),none
+39 ,g(cook=2), d(cook=1) e(cook=2) f(cook=8) i(cook=10) a(cook=20) b(cook=20), c(prep=15),none
+40 ,g(cook=1), d(cook=1) e(cook=2) f(cook=8) i(cook=10) a(cook=20) b(cook=20), c(prep=14) j(prep=1),j arrives|
+41 ,Cleaning, j(cook=1) d(cook=1) e(cook=2) f(cook=8) i(cook=10) a(cook=20) b(cook=20), c(prep=13),g is done|stove is cleaning|j is prepared|
+42 ,j(cook=1), d(cook=1) e(cook=2) f(cook=8) i(cook=10) a(cook=20) b(cook=20), c(prep=12),none
+43 ,Cleaning, d(cook=1) e(cook=2) f(cook=8) i(cook=10) a(cook=20) b(cook=20), c(prep=11),j is done|stove is cleaning|
+44 ,d(cook=1), e(cook=2) f(cook=8) i(cook=10) a(cook=20) b(cook=20), c(prep=10),none
+45 ,Cleaning, e(cook=2) f(cook=8) i(cook=10) a(cook=20) b(cook=20), c(prep=9) k(prep=20) d(prep=1),d is done cooking|stove is cleaning|k arrives|
+46 ,d(cook=1), e(cook=2) f(cook=8) i(cook=10) a(cook=20) b(cook=20), c(prep=8) k(prep=19) l(prep=20),d is prepared|l arrives|
+47 ,Cleaning, e(cook=2) f(cook=8) i(cook=10) a(cook=20) b(cook=20), c(prep=7) k(prep=18) l(prep=19) d(prep=1),d is done cooking|stove is cleaning|
+48 ,d(cook=1), e(cook=2) f(cook=8) i(cook=10) a(cook=20) b(cook=20), c(prep=6) k(prep=17) l(prep=18),d is prepared|
+49 ,Cleaning, e(cook=2) f(cook=8) i(cook=10) a(cook=20) b(cook=20), c(prep=5) k(prep=16) l(prep=17) d(prep=1),d is done cooking|stove is cleaning|
+50 ,d(cook=1), e(cook=2) f(cook=8) i(cook=10) a(cook=20) b(cook=20), c(prep=4) k(prep=15) l(prep=16),d is prepared|
+51 ,Cleaning, e(cook=2) f(cook=8) i(cook=10) a(cook=20) b(cook=20), c(prep=3) k(prep=14) l(prep=15) d(prep=1),d is done cooking|stove is cleaning|
+52 ,d(cook=1), e(cook=2) f(cook=8) i(cook=10) a(cook=20) b(cook=20), c(prep=2) k(prep=13) l(prep=14),d is prepared|
+53 ,Cleaning, e(cook=2) f(cook=8) i(cook=10) a(cook=20) b(cook=20), c(prep=1) k(prep=12) l(prep=13) d(prep=1),d is done cooking|stove is cleaning|
+54 ,d(cook=1), c(cook=1) e(cook=2) f(cook=8) i(cook=10) a(cook=20) b(cook=20), k(prep=12) l(prep=12),c is prepared|d is prepared|
+55 ,Cleaning, c(cook=1) e(cook=2) f(cook=8) i(cook=10) a(cook=20) b(cook=20), k(prep=11) l(prep=11) d(prep=1),d is done cooking|stove is cleaning|
+56 ,d(cook=1), c(cook=1) e(cook=2) f(cook=8) i(cook=10) a(cook=20) b(cook=20), k(prep=10) l(prep=10),d is prepared|
+57 ,Cleaning, c(cook=1) e(cook=2) f(cook=8) i(cook=10) a(cook=20) b(cook=20), k(prep=9) l(prep=9) d(prep=1),d is done cooking|stove is cleaning|
+58 ,d(cook=1), c(cook=1) e(cook=2) f(cook=8) i(cook=10) a(cook=20) b(cook=20), k(prep=8) l(prep=8),d is prepared|
+59 ,Cleaning, c(cook=1) e(cook=2) f(cook=8) i(cook=10) a(cook=20) b(cook=20), k(prep=7) l(prep=7),d is done|stove is cleaning|
+60 ,c(cook=1), e(cook=2) f(cook=8) i(cook=10) a(cook=20) b(cook=20), k(prep=6) l(prep=6),none
+61 ,Cleaning, e(cook=2) f(cook=8) i(cook=10) a(cook=20) b(cook=20), k(prep=5) l(prep=5) c(prep=20),c is done cooking|stove is cleaning|
+62 ,e(cook=2), f(cook=8) i(cook=10) a(cook=20) b(cook=20), k(prep=4) l(prep=4) c(prep=19),none
+63 ,e(cook=1), f(cook=8) i(cook=10) a(cook=20) b(cook=20), k(prep=3) l(prep=3) c(prep=18),none
+64 ,Cleaning, f(cook=8) i(cook=10) a(cook=20) b(cook=20), k(prep=2) l(prep=2) c(prep=17) e(prep=1),e is done cooking|stove is cleaning|
+65 ,e(cook=1), f(cook=8) i(cook=10) a(cook=20) b(cook=20), k(prep=1) l(prep=1) c(prep=16),e is prepared|
+66 ,Cleaning, k(cook=3) f(cook=8) i(cook=10) a(cook=20) b(cook=20), l(prep=1) c(prep=15) e(prep=3),e is done cooking|stove is cleaning|k is prepared|
+67 ,k(cook=3), f(cook=8) i(cook=10) l(cook=11) a(cook=20) b(cook=20), c(prep=15) e(prep=2),l is prepared|
+68 ,k(cook=2), f(cook=8) i(cook=10) l(cook=11) a(cook=20) b(cook=20), c(prep=14) e(prep=1),none
+69 ,k(cook=1), e(cook=3) f(cook=8) i(cook=10) l(cook=11) a(cook=20) b(cook=20), c(prep=13),e is prepared|
+70 ,Cleaning, e(cook=3) f(cook=8) i(cook=10) l(cook=11) a(cook=20) b(cook=20), c(prep=12) k(prep=5),k is done cooking|stove is cleaning|
+71 ,e(cook=3), f(cook=8) i(cook=10) l(cook=11) a(cook=20) b(cook=20), c(prep=11) k(prep=4),none
+72 ,e(cook=2), f(cook=8) i(cook=10) l(cook=11) a(cook=20) b(cook=20), c(prep=10) k(prep=3),none
+73 ,e(cook=1), f(cook=8) i(cook=10) l(cook=11) a(cook=20) b(cook=20), c(prep=9) k(prep=2),none
+74 ,Cleaning, f(cook=8) i(cook=10) l(cook=11) a(cook=20) b(cook=20), c(prep=8) k(prep=1) e(prep=5),e is done cooking|stove is cleaning|
+75 ,f(cook=8), i(cook=10) l(cook=11) k(cook=18) a(cook=20) b(cook=20), c(prep=7) e(prep=5),k is prepared|
+76 ,f(cook=7), i(cook=10) l(cook=11) k(cook=18) a(cook=20) b(cook=20), c(prep=6) e(prep=4),none
+77 ,f(cook=6), i(cook=10) l(cook=11) k(cook=18) a(cook=20) b(cook=20), c(prep=5) e(prep=3),none
+78 ,f(cook=5), i(cook=10) l(cook=11) k(cook=18) a(cook=20) b(cook=20), c(prep=4) e(prep=2),none
+79 ,f(cook=4), i(cook=10) l(cook=11) k(cook=18) a(cook=20) b(cook=20), c(prep=3) e(prep=1),none
+80 ,f(cook=3), e(cook=5) i(cook=10) l(cook=11) k(cook=18) a(cook=20) b(cook=20), c(prep=2),e is prepared|
+81 ,f(cook=2), e(cook=5) i(cook=10) l(cook=11) k(cook=18) a(cook=20) b(cook=20), c(prep=1),none
+82 ,f(cook=1), c(cook=1) e(cook=5) i(cook=10) l(cook=11) k(cook=18) a(cook=20) b(cook=20),none,c is prepared|
+83 ,Cleaning, c(cook=1) e(cook=5) i(cook=10) l(cook=11) k(cook=18) a(cook=20) b(cook=20), f(prep=7),f is done cooking|stove is cleaning|
+84 ,c(cook=1), e(cook=5) i(cook=10) l(cook=11) k(cook=18) a(cook=20) b(cook=20), f(prep=6),none
+85 ,Cleaning, e(cook=5) i(cook=10) l(cook=11) k(cook=18) a(cook=20) b(cook=20), f(prep=5) c(prep=20),c is done cooking|stove is cleaning|
+86 ,e(cook=5), i(cook=10) l(cook=11) k(cook=18) a(cook=20) b(cook=20), f(prep=4) c(prep=19),none
+87 ,e(cook=4), i(cook=10) l(cook=11) k(cook=18) a(cook=20) b(cook=20), f(prep=3) c(prep=18),none
+88 ,e(cook=3), i(cook=10) l(cook=11) k(cook=18) a(cook=20) b(cook=20), f(prep=2) c(prep=17),none
+89 ,e(cook=2), i(cook=10) l(cook=11) k(cook=18) a(cook=20) b(cook=20), f(prep=1) c(prep=16),none
+90 ,e(cook=1), f(cook=6) i(cook=10) l(cook=11) k(cook=18) a(cook=20) b(cook=20), c(prep=16),f is prepared|
+91 ,Cleaning, f(cook=6) i(cook=10) l(cook=11) k(cook=18) a(cook=20) b(cook=20), c(prep=15) e(prep=4),e is done cooking|stove is cleaning|
+92 ,f(cook=6), i(cook=10) l(cook=11) k(cook=18) a(cook=20) b(cook=20), c(prep=14) e(prep=3),none
+93 ,f(cook=5), i(cook=10) l(cook=11) k(cook=18) a(cook=20) b(cook=20), c(prep=13) e(prep=2),none
+94 ,f(cook=4), i(cook=10) l(cook=11) k(cook=18) a(cook=20) b(cook=20), c(prep=12) e(prep=1),none
+95 ,f(cook=3), e(cook=4) i(cook=10) l(cook=11) k(cook=18) a(cook=20) b(cook=20), c(prep=11),e is prepared|
+96 ,f(cook=2), e(cook=4) i(cook=10) l(cook=11) k(cook=18) a(cook=20) b(cook=20), c(prep=10),none
+97 ,f(cook=1), e(cook=4) i(cook=10) l(cook=11) k(cook=18) a(cook=20) b(cook=20), c(prep=9),none
+98 ,Cleaning, e(cook=4) i(cook=10) l(cook=11) k(cook=18) a(cook=20) b(cook=20), c(prep=8) f(prep=5),f is done cooking|stove is cleaning|
+99 ,e(cook=4), i(cook=10) l(cook=11) k(cook=18) a(cook=20) b(cook=20), c(prep=7) f(prep=4),none
+100 ,e(cook=3), i(cook=10) l(cook=11) k(cook=18) a(cook=20) b(cook=20), c(prep=6) f(prep=3),none
+101 ,e(cook=2), i(cook=10) l(cook=11) k(cook=18) a(cook=20) b(cook=20), c(prep=5) f(prep=2),none
+102 ,e(cook=1), i(cook=10) l(cook=11) k(cook=18) a(cook=20) b(cook=20), c(prep=4) f(prep=1),none
+103 ,Cleaning, f(cook=4) i(cook=10) l(cook=11) k(cook=18) a(cook=20) b(cook=20), c(prep=3),e is done|stove is cleaning|f is prepared|
+104 ,f(cook=4), i(cook=10) l(cook=11) k(cook=18) a(cook=20) b(cook=20), c(prep=2),none
+105 ,f(cook=3), i(cook=10) l(cook=11) k(cook=18) a(cook=20) b(cook=20), c(prep=1),none
+106 ,f(cook=2), c(cook=1) i(cook=10) l(cook=11) k(cook=18) a(cook=20) b(cook=20),none,c is prepared|
+107 ,f(cook=1), c(cook=1) i(cook=10) l(cook=11) k(cook=18) a(cook=20) b(cook=20),none,none
+108 ,Cleaning, c(cook=1) i(cook=10) l(cook=11) k(cook=18) a(cook=20) b(cook=20),none,f is done|stove is cleaning|
+109 ,c(cook=1), i(cook=10) l(cook=11) k(cook=18) a(cook=20) b(cook=20),none,none
+110 ,Cleaning, i(cook=10) l(cook=11) k(cook=18) a(cook=20) b(cook=20),none,c is done|stove is cleaning|
+111 ,i(cook=10), l(cook=11) k(cook=18) a(cook=20) b(cook=20),none,none
+112 ,i(cook=9), l(cook=11) k(cook=18) a(cook=20) b(cook=20),none,none
+113 ,i(cook=8), l(cook=11) k(cook=18) a(cook=20) b(cook=20),none,none
+114 ,i(cook=7), l(cook=11) k(cook=18) a(cook=20) b(cook=20),none,none
+115 ,i(cook=6), l(cook=11) k(cook=18) a(cook=20) b(cook=20),none,none
+116 ,i(cook=5), l(cook=11) k(cook=18) a(cook=20) b(cook=20),none,none
+117 ,i(cook=4), l(cook=11) k(cook=18) a(cook=20) b(cook=20),none,none
+118 ,i(cook=3), l(cook=11) k(cook=18) a(cook=20) b(cook=20),none,none
+119 ,i(cook=2), l(cook=11) k(cook=18) a(cook=20) b(cook=20),none,none
+120 ,i(cook=1), l(cook=11) k(cook=18) a(cook=20) b(cook=20),none,none
+121 ,Cleaning, l(cook=11) k(cook=18) a(cook=20) b(cook=20), i(prep=10),i is done cooking|stove is cleaning|
+122 ,l(cook=11), k(cook=18) a(cook=20) b(cook=20), i(prep=9),none
+123 ,l(cook=10), k(cook=18) a(cook=20) b(cook=20), i(prep=8),none
+124 ,l(cook=9), k(cook=18) a(cook=20) b(cook=20), i(prep=7),none
+125 ,l(cook=8), k(cook=18) a(cook=20) b(cook=20), i(prep=6),none
+126 ,l(cook=7), k(cook=18) a(cook=20) b(cook=20), i(prep=5),none
+127 ,l(cook=6), k(cook=18) a(cook=20) b(cook=20), i(prep=4),none
+128 ,l(cook=5), k(cook=18) a(cook=20) b(cook=20), i(prep=3),none
+129 ,l(cook=4), k(cook=18) a(cook=20) b(cook=20), i(prep=2),none
+130 ,l(cook=3), k(cook=18) a(cook=20) b(cook=20), i(prep=1),none
+131 ,l(cook=2), i(cook=10) k(cook=18) a(cook=20) b(cook=20),none,i is prepared|
+132 ,l(cook=1), i(cook=10) k(cook=18) a(cook=20) b(cook=20),none,none
+133 ,Cleaning, i(cook=10) k(cook=18) a(cook=20) b(cook=20), l(prep=17),l is done cooking|stove is cleaning|
+134 ,i(cook=10), k(cook=18) a(cook=20) b(cook=20), l(prep=16),none
+135 ,i(cook=9), k(cook=18) a(cook=20) b(cook=20), l(prep=15),none
+136 ,i(cook=8), k(cook=18) a(cook=20) b(cook=20), l(prep=14),none
+137 ,i(cook=7), k(cook=18) a(cook=20) b(cook=20), l(prep=13),none
+138 ,i(cook=6), k(cook=18) a(cook=20) b(cook=20), l(prep=12),none
+139 ,i(cook=5), k(cook=18) a(cook=20) b(cook=20), l(prep=11),none
+140 ,i(cook=4), k(cook=18) a(cook=20) b(cook=20), l(prep=10),none
+141 ,i(cook=3), k(cook=18) a(cook=20) b(cook=20), l(prep=9),none
+142 ,i(cook=2), k(cook=18) a(cook=20) b(cook=20), l(prep=8),none
+143 ,i(cook=1), k(cook=18) a(cook=20) b(cook=20), l(prep=7),none
+144 ,Cleaning, k(cook=18) a(cook=20) b(cook=20), l(prep=6) i(prep=3),i is done cooking|stove is cleaning|
+145 ,k(cook=18), a(cook=20) b(cook=20), l(prep=5) i(prep=2),none
+146 ,k(cook=17), a(cook=20) b(cook=20), l(prep=4) i(prep=1),none
+147 ,k(cook=16), i(cook=13) a(cook=20) b(cook=20), l(prep=3),i is prepared|
+148 ,k(cook=15), i(cook=13) a(cook=20) b(cook=20), l(prep=2),none
+149 ,k(cook=14), i(cook=13) a(cook=20) b(cook=20), l(prep=1),none
+150 ,k(cook=13), l(cook=2) i(cook=13) a(cook=20) b(cook=20),none,l is prepared|
+151 ,k(cook=12), l(cook=2) i(cook=13) a(cook=20) b(cook=20),none,none
+152 ,k(cook=11), l(cook=2) i(cook=13) a(cook=20) b(cook=20),none,none
+153 ,k(cook=10), l(cook=2) i(cook=13) a(cook=20) b(cook=20),none,none
+154 ,k(cook=9), l(cook=2) i(cook=13) a(cook=20) b(cook=20),none,none
+155 ,k(cook=8), l(cook=2) i(cook=13) a(cook=20) b(cook=20),none,none
+156 ,k(cook=7), l(cook=2) i(cook=13) a(cook=20) b(cook=20),none,none
+157 ,k(cook=6), l(cook=2) i(cook=13) a(cook=20) b(cook=20),none,none
+158 ,k(cook=5), l(cook=2) i(cook=13) a(cook=20) b(cook=20),none,none
+159 ,k(cook=4), l(cook=2) i(cook=13) a(cook=20) b(cook=20),none,none
+160 ,k(cook=3), l(cook=2) i(cook=13) a(cook=20) b(cook=20),none,none
+161 ,k(cook=2), l(cook=2) i(cook=13) a(cook=20) b(cook=20),none,none
+162 ,k(cook=1), l(cook=2) i(cook=13) a(cook=20) b(cook=20),none,none
+163 ,Cleaning, l(cook=2) i(cook=13) a(cook=20) b(cook=20), k(prep=5),k is done cooking|stove is cleaning|
+164 ,l(cook=2), i(cook=13) a(cook=20) b(cook=20), k(prep=4),none
+165 ,l(cook=1), i(cook=13) a(cook=20) b(cook=20), k(prep=3),none
+166 ,Cleaning, i(cook=13) a(cook=20) b(cook=20), k(prep=2) l(prep=5),l is done cooking|stove is cleaning|
+167 ,i(cook=13), a(cook=20) b(cook=20), k(prep=1) l(prep=4),none
+168 ,i(cook=12), k(cook=10) a(cook=20) b(cook=20), l(prep=4),k is prepared|
+169 ,i(cook=11), k(cook=10) a(cook=20) b(cook=20), l(prep=3),none
+170 ,i(cook=10), k(cook=10) a(cook=20) b(cook=20), l(prep=2),none
+171 ,i(cook=9), k(cook=10) a(cook=20) b(cook=20), l(prep=1),none
+172 ,i(cook=8), l(cook=5) k(cook=10) a(cook=20) b(cook=20),none,l is prepared|
+173 ,i(cook=7), l(cook=5) k(cook=10) a(cook=20) b(cook=20),none,none
+174 ,i(cook=6), l(cook=5) k(cook=10) a(cook=20) b(cook=20),none,none
+175 ,i(cook=5), l(cook=5) k(cook=10) a(cook=20) b(cook=20),none,none
+176 ,i(cook=4), l(cook=5) k(cook=10) a(cook=20) b(cook=20),none,none
+177 ,i(cook=3), l(cook=5) k(cook=10) a(cook=20) b(cook=20),none,none
+178 ,i(cook=2), l(cook=5) k(cook=10) a(cook=20) b(cook=20),none,none
+179 ,i(cook=1), l(cook=5) k(cook=10) a(cook=20) b(cook=20),none,none
+180 ,Cleaning, l(cook=5) k(cook=10) a(cook=20) b(cook=20),none,i is done|stove is cleaning|
+181 ,l(cook=5), k(cook=10) a(cook=20) b(cook=20),none,none
+182 ,l(cook=4), k(cook=10) a(cook=20) b(cook=20),none,none
+183 ,l(cook=3), k(cook=10) a(cook=20) b(cook=20),none,none
+184 ,l(cook=2), k(cook=10) a(cook=20) b(cook=20),none,none
+185 ,l(cook=1), k(cook=10) a(cook=20) b(cook=20),none,none
+186 ,Cleaning, k(cook=10) a(cook=20) b(cook=20), l(prep=1),l is done cooking|stove is cleaning|
+187 ,k(cook=10), l(cook=19) a(cook=20) b(cook=20),none,l is prepared|
+188 ,k(cook=9), l(cook=19) a(cook=20) b(cook=20),none,none
+189 ,k(cook=8), l(cook=19) a(cook=20) b(cook=20),none,none
+190 ,k(cook=7), l(cook=19) a(cook=20) b(cook=20),none,none
+191 ,k(cook=6), l(cook=19) a(cook=20) b(cook=20),none,none
+192 ,k(cook=5), l(cook=19) a(cook=20) b(cook=20),none,none
+193 ,k(cook=4), l(cook=19) a(cook=20) b(cook=20),none,none
+194 ,k(cook=3), l(cook=19) a(cook=20) b(cook=20),none,none
+195 ,k(cook=2), l(cook=19) a(cook=20) b(cook=20),none,none
+196 ,k(cook=1), l(cook=19) a(cook=20) b(cook=20),none,none
+197 ,Cleaning, l(cook=19) a(cook=20) b(cook=20), k(prep=6),k is done cooking|stove is cleaning|
+198 ,l(cook=19), a(cook=20) b(cook=20), k(prep=5),none
+199 ,l(cook=18), a(cook=20) b(cook=20), k(prep=4),none
+200 ,l(cook=17), a(cook=20) b(cook=20), k(prep=3),none
+201 ,l(cook=16), a(cook=20) b(cook=20), k(prep=2),none
+202 ,l(cook=15), a(cook=20) b(cook=20), k(prep=1),none
+203 ,l(cook=14), k(cook=2) a(cook=20) b(cook=20),none,k is prepared|
+204 ,l(cook=13), k(cook=2) a(cook=20) b(cook=20),none,none
+205 ,l(cook=12), k(cook=2) a(cook=20) b(cook=20),none,none
+206 ,l(cook=11), k(cook=2) a(cook=20) b(cook=20),none,none
+207 ,l(cook=10), k(cook=2) a(cook=20) b(cook=20),none,none
+208 ,l(cook=9), k(cook=2) a(cook=20) b(cook=20),none,none
+209 ,l(cook=8), k(cook=2) a(cook=20) b(cook=20),none,none
+210 ,l(cook=7), k(cook=2) a(cook=20) b(cook=20),none,none
+211 ,l(cook=6), k(cook=2) a(cook=20) b(cook=20),none,none
+212 ,l(cook=5), k(cook=2) a(cook=20) b(cook=20),none,none
+213 ,l(cook=4), k(cook=2) a(cook=20) b(cook=20),none,none
+214 ,l(cook=3), k(cook=2) a(cook=20) b(cook=20),none,none
+215 ,l(cook=2), k(cook=2) a(cook=20) b(cook=20),none,none
+216 ,l(cook=1), k(cook=2) a(cook=20) b(cook=20),none,none
+217 ,Cleaning, k(cook=2) a(cook=20) b(cook=20),none,l is done|stove is cleaning|
+218 ,k(cook=2), a(cook=20) b(cook=20),none,none
+219 ,k(cook=1), a(cook=20) b(cook=20),none,none
+220 ,Cleaning, a(cook=20) b(cook=20),none,k is done|stove is cleaning|
+221 ,a(cook=20), b(cook=20),none,none
+222 ,a(cook=19), b(cook=20),none,none
+223 ,a(cook=18), b(cook=20),none,none
+224 ,a(cook=17), b(cook=20),none,none
+225 ,a(cook=16), b(cook=20),none,none
+226 ,a(cook=15), b(cook=20),none,none
+227 ,a(cook=14), b(cook=20),none,none
+228 ,a(cook=13), b(cook=20),none,none
+229 ,a(cook=12), b(cook=20),none,none
+230 ,a(cook=11), b(cook=20),none,none
+231 ,a(cook=10), b(cook=20),none,none
+232 ,a(cook=9), b(cook=20),none,none
+233 ,a(cook=8), b(cook=20),none,none
+234 ,a(cook=7), b(cook=20),none,none
+235 ,a(cook=6), b(cook=20),none,none
+236 ,a(cook=5), b(cook=20),none,none
+237 ,a(cook=4), b(cook=20),none,none
+238 ,a(cook=3), b(cook=20),none,none
+239 ,a(cook=2), b(cook=20),none,none
+240 ,a(cook=1), b(cook=20),none,none
+241 ,Cleaning, b(cook=20), a(prep=3),a is done cooking|stove is cleaning|
+242 ,b(cook=20),none, a(prep=2),none
+243 ,b(cook=19),none, a(prep=1),none
+244 ,b(cook=18), a(cook=16),none,a is prepared|
+245 ,b(cook=17), a(cook=16),none,none
+246 ,b(cook=16), a(cook=16),none,none
+247 ,b(cook=15), a(cook=16),none,none
+248 ,b(cook=14), a(cook=16),none,none
+249 ,b(cook=13), a(cook=16),none,none
+250 ,b(cook=12), a(cook=16),none,none
+251 ,b(cook=11), a(cook=16),none,none
+252 ,b(cook=10), a(cook=16),none,none
+253 ,b(cook=9), a(cook=16),none,none
+254 ,b(cook=8), a(cook=16),none,none
+255 ,b(cook=7), a(cook=16),none,none
+256 ,b(cook=6), a(cook=16),none,none
+257 ,b(cook=5), a(cook=16),none,none
+258 ,b(cook=4), a(cook=16),none,none
+259 ,b(cook=3), a(cook=16),none,none
+260 ,b(cook=2), a(cook=16),none,none
+261 ,b(cook=1), a(cook=16),none,none
+262 ,Cleaning, a(cook=16), b(prep=1),b is done cooking|stove is cleaning|
+263 ,a(cook=16), b(cook=20),none,b is prepared|
+264 ,a(cook=15), b(cook=20),none,none
+265 ,a(cook=14), b(cook=20),none,none
+266 ,a(cook=13), b(cook=20),none,none
+267 ,a(cook=12), b(cook=20),none,none
+268 ,a(cook=11), b(cook=20),none,none
+269 ,a(cook=10), b(cook=20),none,none
+270 ,a(cook=9), b(cook=20),none,none
+271 ,a(cook=8), b(cook=20),none,none
+272 ,a(cook=7), b(cook=20),none,none
+273 ,a(cook=6), b(cook=20),none,none
+274 ,a(cook=5), b(cook=20),none,none
+275 ,a(cook=4), b(cook=20),none,none
+276 ,a(cook=3), b(cook=20),none,none
+277 ,a(cook=2), b(cook=20),none,none
+278 ,a(cook=1), b(cook=20),none,none
+279 ,Cleaning, b(cook=20), a(prep=13),a is done cooking|stove is cleaning|
+280 ,b(cook=20),none, a(prep=12),none
+281 ,b(cook=19),none, a(prep=11),none
+282 ,b(cook=18),none, a(prep=10),none
+283 ,b(cook=17),none, a(prep=9),none
+284 ,b(cook=16),none, a(prep=8),none
+285 ,b(cook=15),none, a(prep=7),none
+286 ,b(cook=14),none, a(prep=6),none
+287 ,b(cook=13),none, a(prep=5),none
+288 ,b(cook=12),none, a(prep=4),none
+289 ,b(cook=11),none, a(prep=3),none
+290 ,b(cook=10),none, a(prep=2),none
+291 ,b(cook=9),none, a(prep=1),none
+292 ,b(cook=8), a(cook=1),none,a is prepared|
+293 ,b(cook=7), a(cook=1),none,none
+294 ,b(cook=6), a(cook=1),none,none
+295 ,b(cook=5), a(cook=1),none,none
+296 ,b(cook=4), a(cook=1),none,none
+297 ,b(cook=3), a(cook=1),none,none
+298 ,b(cook=2), a(cook=1),none,none
+299 ,b(cook=1), a(cook=1),none,none
+300 ,Cleaning, a(cook=1), b(prep=1),b is done cooking|stove is cleaning|
+301 ,a(cook=1), b(cook=20),none,b is prepared|
+302 ,Cleaning, b(cook=20), a(prep=2),a is done cooking|stove is cleaning|
+303 ,b(cook=20),none, a(prep=1),none
+304 ,b(cook=19), a(cook=3),none,a is prepared|
+305 ,b(cook=18), a(cook=3),none,none
+306 ,b(cook=17), a(cook=3),none,none
+307 ,b(cook=16), a(cook=3),none,none
+308 ,b(cook=15), a(cook=3),none,none
+309 ,b(cook=14), a(cook=3),none,none
+310 ,b(cook=13), a(cook=3),none,none
+311 ,b(cook=12), a(cook=3),none,none
+312 ,b(cook=11), a(cook=3),none,none
+313 ,b(cook=10), a(cook=3),none,none
+314 ,b(cook=9), a(cook=3),none,none
+315 ,b(cook=8), a(cook=3),none,none
+316 ,b(cook=7), a(cook=3),none,none
+317 ,b(cook=6), a(cook=3),none,none
+318 ,b(cook=5), a(cook=3),none,none
+319 ,b(cook=4), a(cook=3),none,none
+320 ,b(cook=3), a(cook=3),none,none
+321 ,b(cook=2), a(cook=3),none,none
+322 ,b(cook=1), a(cook=3),none,none
+323 ,Cleaning, a(cook=3),none,b is done|stove is cleaning|
+324 ,a(cook=3),none,none,none
+325 ,a(cook=2),none,none,none
+326 ,a(cook=1),none,none,none
+
+
+,,Time Completed, 327
+,,Stove Utilization, 278/327 = 85.02%
+,,Job, Waiting time, Priority
+,,[h], 4, 2
+,,[g], 5, 7
+,,[j], 1, 9
+,,[d], 29, 10
+,,[e], 38, 1
+,,[f], 39, 10
+,,[c], 8, 3
+,,[i], 88, 8
+,,[l], 85, 10
+,,[k], 97, 1
+,,[b], 227, 3
+,,[a], 252, 9
+,,Total:, 873,Avg. Waiting Time 72.75, Weighted average wait time, 6.16
+,,Weighted average priority difference, 0.64

@@ -12,7 +12,7 @@ public class Genetic{
 		
 		double lavg = 0;
 		double avg = 0;
-		for(int i = 0 ; i < 10; i++){
+		for(int i = 0 ; i < 25; i++){
 			for(int j = 0 ; j < gen.size(); j++){
 				Unit u = gen.poll();
 				u.s = Main.program(u, false);
@@ -36,6 +36,7 @@ public class Genetic{
 			}
 		}
 		Collections.sort(pop);
+		Main.program(pop.get(0), true);
 		Unit un = null;
 		while(!pop.isEmpty()) System.out.println((un=pop.poll()).toString());
 		

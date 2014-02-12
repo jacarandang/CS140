@@ -90,6 +90,16 @@ public class Scheduler{
 					if(aging)r.priority++;
 					r.wait++;
 				}
+				else if(custom){
+						if(r.points - u.ped > stove.t.owner.points){
+							rlist.add(stove.t.owner);
+							remarks.add(stove.t.owner.name + " was pre-empted");
+							stove.clean();
+							stove.next = r.nextTask();
+							rlist.remove(r);
+							flag = false;
+						}
+				}
 				else{
 					if(aging)r.priority++;
 					r.wait++;

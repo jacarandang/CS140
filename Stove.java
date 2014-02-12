@@ -10,7 +10,7 @@ public class Stove{
 	public Stove(Scheduler s){
 		t = null;
 		cleaning = false;
-		ttc = 5;
+		ttc = 1;
 		next = null;
 		sched = s;
 		stoveUtil = 0;
@@ -21,7 +21,7 @@ public class Stove{
 			ttc--;
 			if(ttc == 0){
 				cleaning = false;
-				ttc = 5;
+				ttc = 1;
 				if(next != null){
 					this.t = next;
 					next = null;
