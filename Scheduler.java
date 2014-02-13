@@ -90,16 +90,17 @@ public class Scheduler{
 					if(aging)r.priority++;
 					r.wait++;
 				}
-// 				else if(custom){
-// 						if(r.points - u.ped > stove.t.owner.points){
-// 							rlist.add(stove.t.owner);
-// 							remarks.add(stove.t.owner.name + " was pre-empted");
-// 							stove.clean();
-// 							stove.next = r.nextTask();
-// 							rlist.remove(r);
-// 							flag = false;
-// 						}
-// 				}
+				else if(custom){
+						stove.t.owner.updatePoint(u);
+						if(r.points - u.ped > stove.t.owner.points){
+							rlist.add(stove.t.owner);
+							remarks.add(stove.t.owner.name + " was pre-empted");
+							stove.clean();
+							stove.next = r.nextTask();
+							rlist.remove(r);
+							flag = false;
+						}
+				}
 				else{
 					if(aging)r.priority++;
 					r.wait++;
@@ -159,7 +160,7 @@ public class Scheduler{
 		String s = "";
 		s+= minute+" ,";
 		if(stove.t!=null){
-			s += stove.t.owner.name+ "(cook=" +stove.t.trem+")";
+			s += stove.t.owner.name+ "(cook=" +stove.t.trem+" pts="+String.format("%.2f", stove.t.owner.points)+")";
 		}
 		else if(stove.cleaning){
 			s += "Cleaning";
@@ -172,8 +173,8 @@ public class Scheduler{
 		if(rlist.size()>0)
 			for(int i = 0; i < rlist.size(); i++){
 				Recipe temp = rlist.get(i);
-				if(temp.nextTask().step == 0)s += " " + temp.name+ "(cook=" + temp.nextTask().trem+")";
-				else s += " " + temp.name+ "(prep=" + temp.nextTask().trem+")";
+				if(temp.nextTask().step == 0)s += " " + temp.name+ "(cook=" + temp.nextTask().trem+" pts="+String.format("%.2f", temp.points)+")";
+				else s += " " + temp.name+ "(prep=" + temp.nextTask().trem+" pts="+String.format("%.2f", temp.points)+")";
 			}		
 		else
 			s += "none";
@@ -186,12 +187,13 @@ public class Scheduler{
 		else 
 			s += "none";
 			
-		s += ",";
+		s += ",\"";
 		if(remarks.isEmpty())
 			s += "none";
 		while(!remarks.isEmpty()){
-			s += remarks.pop()+"|";
+			s += remarks.pop()+"\n";
 		}
+		s+="\"";
 		return s;
 	}
 }

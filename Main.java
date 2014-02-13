@@ -4,8 +4,8 @@ import java.util.*;
 public class Main{
 	
 	public static void main(String []args)throws Exception{
-		//program(null, true);
-		program(new Unit(), true);
+		program(null, true);
+		//program(new Unit(), true);
 	}
 	
 	public static Stat program(Unit u, boolean out)throws Exception{
@@ -25,7 +25,7 @@ public class Main{
 		
 		Scheduler sched;
 		if(u!=null) sched = new Scheduler(u);
-		else sched = new Scheduler(false, false, false, false, 5);
+		else sched = new Scheduler(false, false, false, true, 10);
 		
 		if(out) System.out.println("Time, Stove, Ready, Assistant, Remarks");
 		int idx = 0;
@@ -74,6 +74,7 @@ public class Main{
 		avg/=(double)sched.dlist.size()-1;
 		if(out) System.out.printf(",,Weighted average priority difference, %.2f\n", avg);
 		Stat stat = new Stat(timer, (float)sched.stove.stoveUtil/(float)(timer), (double)sum1/(double)sched.dlist.size(), avg);
+		if(out) System.out.println(",,Fitness,"+String.format("%.2f", stat.fitness()));
 		return stat;
 	}
 	

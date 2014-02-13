@@ -6,12 +6,13 @@ public class Genetic{
 	public static void main(String []args)throws Exception{
 		LinkedList<Unit> pop = new LinkedList<Unit>();
 		LinkedList<Unit> gen = new LinkedList<Unit>();
-		for(int i = 0 ; i < 100; i++){
+		for(int i = 0 ; i < 1000; i++){
 			gen.offer(new Unit());
 		}
+		
 		double lavg = 0;
 		double avg = 0;
-		for(int i = 0 ; i < 25; i++){
+		for(int i = 0 ; i < 70; i++){
 			for(int j = 0 ; j < gen.size(); j++){
 				Unit u = gen.poll();
 				u.s = Main.program(u, false);
@@ -19,8 +20,10 @@ public class Genetic{
 				avg += u.s.fitness();
 			}
 			avg/=(double)gen.size();
-			if(lavg > avg) System.out.println("Warning: generation "+i+" has lower average fitness");
-			lavg = avg;
+			if(lavg > avg){
+				System.out.println("Warning: generation "+i+" has lower average fitness");
+			}
+			else lavg = avg;
 			System.out.println("Generation "+i+" average fitness: "+avg);
 			avg = 0;
 			while(!gen.isEmpty()){
