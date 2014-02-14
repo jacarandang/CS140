@@ -60,6 +60,10 @@ public class Unit implements Comparable<Unit>{
 		return trm+","+prm+","+wtm+","+tkm+","+ped+","+s.fitness();
 	}
 	
+	public String toCfg(){
+		return trm+" "+prm+" "+wtm+" "+tkm+" "+ped;
+	}
+	
 	public int compareTo(Unit u){
 		return (int)(u.s.fitness()*100 - s.fitness()*100);
 	}
