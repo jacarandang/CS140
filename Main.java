@@ -4,7 +4,27 @@ import java.util.*;
 public class Main{
 	
 	public static void main(String []args)throws Exception{
-		program(null, true);
+		double[] mul = new double[5];
+		File file = new File("config.txt");
+		String inp;
+		
+		if(file.isFile()) {
+			try {
+				BufferedReader cfin = new BufferedReader(new FileReader(file));
+				inp = cfin.readLine();
+				StringTokenizer tok = new StringTokenizer(inp);
+				for(int i = 0; i < 5; i++) {
+					mul[i] = Double.parseDouble(tok.nextToken());
+					System.out.println("!!!"+mul[i]);
+				}					
+				cfin.close();
+			} catch(IOException e){}
+			program(new Unit(mul[0], mul[1], mul[2], mul[3], mul[4]), true);
+		}
+		
+		else {
+			program(null, true);
+		}
 		//program(new Unit(), true);
 	}
 	
