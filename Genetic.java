@@ -38,6 +38,15 @@ public class Genetic{
 			}
 		}
 		Collections.sort(pop);
+		
+		//Write to file here
+		try {
+			File file = new File("config.txt");
+			BufferedWriter output = new BufferedWriter(new FileWriter(file));
+			output.write(pop.get(0).toCfg());
+			output.close();
+		} catch(IOException e) {}
+		
 		Main.program(pop.get(0), true);
 		Unit un = null;
 		while(!pop.isEmpty()) System.out.println((un=pop.poll()).toString());
