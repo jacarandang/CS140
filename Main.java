@@ -15,7 +15,7 @@ public class Main{
 				StringTokenizer tok = new StringTokenizer(inp);
 				for(int i = 0; i < 5; i++) {
 					mul[i] = Double.parseDouble(tok.nextToken());
-					System.out.println("!!!"+mul[i]);
+					//System.out.println("!!!"+mul[i]);
 				}					
 				cfin.close();
 			} catch(IOException e){}
