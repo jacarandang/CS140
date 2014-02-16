@@ -187,13 +187,12 @@ public class Scheduler{
 		else 
 			s += "none";
 			
-		s += ",\"";
+		s += ",";
 		if(remarks.isEmpty())
 			s += "none";
 		while(!remarks.isEmpty()){
-			s += remarks.pop()+"\n";
+			s += remarks.pop()+"|";
 		}
-		s+="\"";
 		return s;
 	}
 }

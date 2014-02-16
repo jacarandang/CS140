@@ -8,7 +8,7 @@ public class Main{
 		File file = new File("config.txt");
 		String inp;
 		
-		if(file.isFile()) {
+		if(file.isFile() && args.length == 0) {
 			try {
 				BufferedReader cfin = new BufferedReader(new FileReader(file));
 				inp = cfin.readLine();
@@ -48,7 +48,7 @@ public class Main{
 		
 		Scheduler sched;
 		if(u!=null) sched = new Scheduler(u);
-		else sched = new Scheduler(false, false, false, true, 10);
+		else sched = new Scheduler(true, false, false, false, 5);
 		try {	
 			//if(out) System.out.println("Time, Stove, Ready, Assistant, Remarks"); 	newLine()
 			if(out) output.write("Time, Stove, Ready, Assistant, Remarks\n");

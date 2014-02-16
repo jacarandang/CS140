@@ -12,7 +12,7 @@ public class Genetic{
 		
 		double lavg = 0;
 		double avg = 0;
-		for(int i = 0 ; i < 70; i++){
+		for(int i = 0 ; i < 20; i++){
 			for(int j = 0 ; j < gen.size(); j++){
 				Unit u = gen.poll();
 				u.s = Main.program(u, false);
